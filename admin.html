@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+      <nav>
+        <div>Blog Page</div>
+        <div>
+          <a href="home.html">Home</a>
+          <a href="blogs.html">Blogs</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </nav>
+    </header>
+
+    <form id="blogForm">
+        <input type="text" id="title" placeholder="Blog Title" required />
+        <input type="text" id="author" placeholder="Author Name" required />
+        <textarea id="description" placeholder="Blog Description" required></textarea>
+      <input type="text" id="category" placeholder="Category" required />
+      <input type="date" id="date" required />
+      <input type="url" id="image" placeholder="Image URL" />
+      <button type="submit">Add Blog</button>
+    </form>
+
+</body>
+
+<script>
+    document.getElementById("blogForm").addEventListener("submit", function(e){
+        e.preventDefault()
+
+        const title = document.getElementById("title").value;
+        const author = document.getElementById("author").value;
+        const description = document.getElementById("description").value;
+        const category = document.getElementById("category").value;
+        const date = document.getElementById("date").value;
+        const image = document.getElementById("image").value;
+
+        let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+        blogs.push({
+            title,
+            author,
+            description,
+            category,
+            date,
+            image
+        })
+
+        console.log(blogs);
+        
+        localStorage.setItem("blogs",JSON.stringify(blogs));
+
+        this.reset();
+
+        window.location.href ="home.html"
+    })
+</script>
+</html>

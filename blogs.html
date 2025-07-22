@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+
+    <link rel="stylesheet" href="blogs.css">
+</head>
+<body>
+    <header>
+      <nav>
+        <div>Blog Page</div>
+        <div>
+          <a href="home.html">Home</a>
+          <a href="blogs.html">Blogs</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search by title..." />
+
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+      </select>
+
+      <select id="authorFilter">
+        <option value="">All Authors</option>
+      </select>
+
+      <select id="sortDate">
+        <option value="newest">Sort by Date</option>
+      </select>
+    </div>
+
+    <div id="blog-container"></div>
+</body>
+<script src="script.js"></script>
+</html>
